@@ -29,7 +29,7 @@ import java.util.UUID;
 
 /**
  * An implementation of the the {@link MediaDrmCallback} that integrates
- * <a href="https://castlabs.com/drmtoday/https://castlabs.com/drmtoday/">DRMtoday</a>.
+ * <a href="https://castlabs.com/drmtoday/">DRMtoday</a>.
  *
  */
 @SuppressWarnings("WeakerAccess")
