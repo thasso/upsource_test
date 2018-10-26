@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.castlabs.drmtoday.demo"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+
+    implementation 'com.google.android.exoplayer:exoplayer-core:' + getProperty('exo.version')
+    implementation 'com.google.android.exoplayer:exoplayer-dash:' + getProperty('exo.version')
+    implementation 'com.google.android.exoplayer:exoplayer-ui:' + getProperty('exo.version')
+
+    // Load the library project, but exclude its exo player dependencies since we
+    // load our own version here
+    implementation(project(path: ':lib')) {
+        exclude group: 'com.google.android.exoplayer'
+    }
+}

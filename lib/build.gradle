@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+
+group 'com.castlabs.drmtoday'
+version '1.0.0'
+project.archivesBaseName = "drmtoday-exo-player"
+
+def versionCode() {
+    return Integer.parseInt(project.version.replaceAll('.', ''))
+}
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode versionCode()
+        versionName project.version
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation 'com.google.android.exoplayer:exoplayer-core:' + getProperty('exo.version')
+}
